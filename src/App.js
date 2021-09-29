@@ -48,26 +48,26 @@ function App() {
 						return <Follower key={item.id} {...item} />;
 					})}
 				</div>
+				<div className="btn-container">
+					<button className="prev-btn" onClick={prevPage}>
+						Prev
+					</button>
+					{data.map((item, index) => {
+						return (
+							<button
+								key={index}
+								className={`page-btn ${index === page ? "active-btn" : null}`}
+								onClick={() => handlePage(index)}
+							>
+								{index + 1}
+							</button>
+						);
+					})}
+					<button className="next-btn" onClick={nextPage}>
+						Next
+					</button>
+				</div>
 			</section>
-			<div className="btn-container">
-				<button className="prev-btn" onClick={prevPage}>
-					Prev
-				</button>
-				{data.map((item, index) => {
-					return (
-						<button
-							key={index}
-							className={`page-btn ${index === page ? "active-btn" : null}`}
-							onClick={() => handlePage(index)}
-						>
-							{index + 1}
-						</button>
-					);
-				})}
-				<button className="next-btn" onClick={nextPage}>
-					Next
-				</button>
-			</div>
 		</main>
 	);
 }

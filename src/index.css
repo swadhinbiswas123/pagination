@@ -47,19 +47,21 @@ h4 {
 }
 .followers {
 	width: 90vw;
+	max-width: 1170px;
 	margin: 5rem auto;
 }
 .container {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-gap: 2rem;
-	margin-top: 4rem;
+	gap: 2rem;
+	margin-bottom: 4rem;
 }
 
 .singleFollower > img {
-	width: 100px;
-	height: 100px;
+	width: 130px;
+	height: 130px;
 	border-radius: 50%;
+	object-fit: cover;
+	margin-bottom: 0.75rem;
 }
 
 .singleFollower {
@@ -67,33 +69,33 @@ h4 {
 	background: white;
 	box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
 	border-radius: 10px;
-	padding: 2rem 0;
+	padding: 2rem 1rem;
 }
 
 .btn {
 	background: #49a6e9;
 	color: white;
-	padding: 5px 20px;
+	padding: 0.35rem 0.75rem;
 	text-decoration: none;
 	border-radius: 20px;
-	font-size: 0.875rem;
+	font-size: 0.75rem;
 	text-transform: uppercase;
 }
 
 .btn-container {
-	text-align: center;
-	margin: 3rem auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .page-btn {
-	width: 40px;
-	height: 40px;
+	width: 2rem;
+	height: 2rem;
 	background: #8bcbf9;
 	color: #000000;
 	font-size: 0.875rem;
-	padding: 10px 10px;
 	border: none;
-	margin: 0 10px;
+	margin: 0.5rem;
 	border-radius: 5px;
 	cursor: pointer;
 }
@@ -111,4 +113,27 @@ h4 {
 	border: transparent;
 	font-weight: 700;
 	cursor: pointer;
+	margin: 0.5rem;
+	letter-spacing: 0.1rem;
+}
+
+/* Media queries */
+
+@media screen and (min-width: 576px) {
+	.container {
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	}
+}
+
+/* @media screen and (min-width: 576px) {
+	.container {
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	}
+} */
+
+@media screen and (min-width: 775px) {
+	.btn-container {
+		margin: 0 auto;
+		max-width: 700px;
+	}
 }
